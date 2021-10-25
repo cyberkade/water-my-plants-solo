@@ -1,11 +1,17 @@
-import { Route, Switch } from "react-router";
+import { Route, Switch } from "react-router-dom";
 import Header from "./components/Header";
+import Home from "./components/Home";
+import Register from "./components/Register";
 
 function App() {
   return (
     <div className="App">
-      <Route exact path="/" component={Header} />
-      <Switch></Switch>
+      <Header />
+      <Switch>
+        <Route path="/register" component={Register} />
+
+        <Route path="/" component={Home} />
+      </Switch>
     </div>
   );
 }
